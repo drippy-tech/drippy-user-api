@@ -1,0 +1,12 @@
+CREATE TABLE users(
+    id UUID PRIMARY KEY,
+    name VARCHAR(80) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password TEXT NOT NULL,
+    username VARCHAR(16) NOT NULL UNIQUE,
+    profile VARCHAR(32) NOT NULL,
+    status BOOLEAN NOT NULL DEFAULT true,
+    is_email_verified BOOLEAN NOT NULL DEFAULT false,
+    created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE
+);

@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: drippy-user-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/drippy-user-db
+    username: drippy
+    password: 12345
+
+server:
+  servlet:
+    context-path: /api
+  port: 8080
