@@ -29,4 +29,12 @@ cd drippy-user-api
 
 ## Testing
 
-(Documentation will be available soon)
+This project includes unit and integration testing to ensure code quality. Tests can be run with the command:
+```bash
+mvn test
+```
+
+For integration testing, the Docker must be running. Check status with:
+```bash
+docker ps
+```
