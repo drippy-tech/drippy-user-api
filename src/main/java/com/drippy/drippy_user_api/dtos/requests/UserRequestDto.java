@@ -12,10 +12,10 @@ public record UserRequestDto(
 
    @NotNull(message = "is required")
    @Email(message = "must be a valid email")
-   @Size(max = 100, message = "must be between 3 and 100 characters")
+   @Size(max = 100, message = "must have at max 100 characters")
    String email,
 
-   @NotNull(message = "is reuquired")
+   @NotNull(message = "is required")
    @Size(min = 8, max = 64, message = "must be between 8 and 64 characters")
    String password,
 
