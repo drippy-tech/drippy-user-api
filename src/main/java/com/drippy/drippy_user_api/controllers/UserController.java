@@ -3,6 +3,7 @@ package com.drippy.drippy_user_api.controllers;
 import com.drippy.drippy_user_api.dtos.requests.UserRequestDto;
 import com.drippy.drippy_user_api.dtos.responses.HttpSuccessResponseDto;
 import com.drippy.drippy_user_api.dtos.responses.UserResponseDto;
+import com.drippy.drippy_user_api.exceptions.customs.MismatchPasswordException;
 import com.drippy.drippy_user_api.mappers.UserMapper;
 import com.drippy.drippy_user_api.models.User;
 import com.drippy.drippy_user_api.services.UserService;
@@ -27,6 +28,9 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<HttpSuccessResponseDto<UserResponseDto>> createUser(@Valid @RequestBody UserRequestDto dto) {
+        if(!dto.password().equals(dto.passwordConfirmation()))
+            throw new MismatchPasswordException();
+
         User createdUser = userService.createUser(userMapper.toEntity(dto));
         HttpSuccessResponseDto<UserResponseDto> successResponseDto = new HttpSuccessResponseDto<>(
                 userMapper.toResponseDto(createdUser),
