@@ -26,7 +26,7 @@ class UserMapperTest {
     @Test
     @DisplayName("Should map UserRequestDto to User entity")
     void shouldMapUserRequestDtoToUserEntity() {
-        // Arrange
+        //Arrange
         UserRequestDto userRequestDto = new UserRequestDto(
                 "Jhon Doe",
                 "jhon.doe@mail.com",
@@ -55,7 +55,7 @@ class UserMapperTest {
     @Test
     @DisplayName("Should map User entity to UserResponseDto")
     void shouldMapUserEntityToUserResponseDto() {
-        // Arrange
+        //Arrange
         UUID id = UUID.randomUUID();
         OffsetDateTime createdAt = OffsetDateTime.now();
 
@@ -70,10 +70,10 @@ class UserMapperTest {
         user.setCreatedAt(createdAt);
         user.setUpdatedAt(null);
 
-        // Act
+        //Act
         UserResponseDto responseDto = userMapper.toResponseDto(user);
 
-        // Assert
+        //Assert
         assertEquals(user.getId(), responseDto.id());
         assertEquals(user.getName(), responseDto.name());
         assertEquals(user.getEmail(), responseDto.email());
