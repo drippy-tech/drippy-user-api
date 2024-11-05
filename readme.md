@@ -26,7 +26,6 @@ cd drippy-user-api
 
 (Documentation will be available soon)
 
-
 ## Testing
 
 This project includes unit and integration testing to ensure code quality. Tests can be run with the command:
